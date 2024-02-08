@@ -1,6 +1,6 @@
 {
   "name": "silarhi/zugferd-php",
-  "description": "ZUGFeRD PHP SDK (Factur-X, XRechnung) - Convert PHP Objects to XML and back.",
+  "description": "XML generator for ZUGFeRD / Factur-X / XRechnung written in PHP. Convert PHP Objects to XML and back.",
   "keywords": [
     "ZUGFeRD", "Factur-X", "XRechnung"
   ],
