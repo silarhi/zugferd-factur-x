@@ -8,7 +8,8 @@ ZUGFeRD PHP SDK (Factur-X, XRechnung) - Convert PHP Objects to XML and back.
 [Look @ Tests for more details](tests)
 
 ## Installation
-The recommended way of installing this library is using [Composer](http://getcomposer.org/). 
+
+The recommended way of installing this library is using [Composer](http://getcomposer.org/).
 
 Add this repository to your composer information using the following command
 
