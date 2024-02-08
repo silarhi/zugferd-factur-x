@@ -1,9 +1,9 @@
 ZUGFeRD PHP
 ===========
 
-[![Latest Stable Version](https://poser.pugx.org/easybill/zugferd-php/v/stable.png)](https://packagist.org/packages/easybill/zugferd-php) [![Total Downloads](https://poser.pugx.org/easybill/zugferd-php/downloads.png)](https://packagist.org/packages/easybill/zugferd-php) [![Latest Unstable Version](https://poser.pugx.org/easybill/zugferd-php/v/unstable.png)](https://packagist.org/packages/easybill/zugferd-php) [![License](https://poser.pugx.org/easybill/zugferd-php/license.png)](https://packagist.org/packages/easybill/zugferd-php) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/easybill/zugferd-php)
+[![Latest Stable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/stable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Total Downloads](https://poser.pugx.org/silarhi/zugferd-factur-x/downloads.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Latest Unstable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/unstable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![License](https://poser.pugx.org/silarhi/zugferd-factur-x/license.png)](https://packagist.org/packages/silarhi/zugferd-factur-x)
 
-ZUGFeRD PHP SDK (Factur-X, XRechnung) - Convert PHP Objects to XML and back.
+XML generator for ZUGFeRD / Factur-X / XRechnung written in PHP. Convert PHP Objects to XML and back.
 
 [Look @ Tests for more details](tests)
 
@@ -14,7 +14,7 @@ The recommended way of installing this library is using [Composer](http://getcom
 Add this repository to your composer information using the following command
 
 ```bash
-composer require easybill/zugferd-php
+composer require silarhi/zugferd-factur-x
 ```
 
 ## Usage ZUGFeRD v2.1
