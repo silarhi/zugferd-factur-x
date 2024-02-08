@@ -1,5 +1,5 @@
 {
-  "name": "silarhi/zugferd-php",
+  "name": "silarhi/zugferd-factur-x",
   "description": "XML generator for ZUGFeRD / Factur-X / XRechnung written in PHP. Convert PHP Objects to XML and back.",
   "keywords": [
     "ZUGFeRD", "Factur-X", "XRechnung"
