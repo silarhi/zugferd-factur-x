@@ -1,10 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the ZUGFeRD PHP package.
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Easybill\ZUGFeRD\Tests;
 
-use Easybill\ZUGFeRD\Model\LegalOrganization;
-use Easybill\ZUGFeRD\Model\LogisticsServiceCharge;
-use PHPUnit\Framework\TestCase;
 use Easybill\ZUGFeRD\Builder;
 use Easybill\ZUGFeRD\Model\Amount;
 use Easybill\ZUGFeRD\Model\CreditorFinancialAccount;
@@ -21,9 +27,11 @@ use Easybill\ZUGFeRD\Model\HeaderTradeDelivery;
 use Easybill\ZUGFeRD\Model\HeaderTradeSettlement;
 use Easybill\ZUGFeRD\Model\Id;
 use Easybill\ZUGFeRD\Model\Indicator;
+use Easybill\ZUGFeRD\Model\LegalOrganization;
 use Easybill\ZUGFeRD\Model\LineTradeAgreement;
 use Easybill\ZUGFeRD\Model\LineTradeDelivery;
 use Easybill\ZUGFeRD\Model\LineTradeSettlement;
+use Easybill\ZUGFeRD\Model\LogisticsServiceCharge;
 use Easybill\ZUGFeRD\Model\Note;
 use Easybill\ZUGFeRD\Model\ProcuringProject;
 use Easybill\ZUGFeRD\Model\Quantity;
@@ -46,6 +54,7 @@ use Easybill\ZUGFeRD\Model\TradeSettlementPaymentMeans;
 use Easybill\ZUGFeRD\Model\TradeTax;
 use Easybill\ZUGFeRD\Model\UniversalCommunication;
 use Easybill\ZUGFeRD\Validator;
+use PHPUnit\Framework\TestCase;
 
 class BuilderTest extends TestCase
 {
