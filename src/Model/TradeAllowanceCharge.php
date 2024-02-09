@@ -23,6 +23,11 @@ class TradeAllowanceCharge
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Indicator $indicator = null;
 
+    #[JMS\Type('float')]
+    #[JMS\SerializedName('SequenceNumeric')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?float $sequenceNumeric = null;
+
     #[JMS\Type('string')]
     #[JMS\SerializedName('CalculationPercent')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
@@ -33,10 +38,20 @@ class TradeAllowanceCharge
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $basisAmount = null;
 
+    #[JMS\Type(Quantity::class)]
+    #[JMS\SerializedName('BasisQuantity')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Quantity $basisQuantity = null;
+
     #[JMS\Type(Amount::class)]
     #[JMS\SerializedName('ActualAmount')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public Amount $actualAmount;
+
+    #[JMS\Type('string')]
+    #[JMS\SerializedName('ReasonCode')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?string $reasonCode = null;
 
     #[JMS\Type('string')]
     #[JMS\SerializedName('Reason')]

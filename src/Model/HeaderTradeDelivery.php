@@ -28,6 +28,16 @@ class HeaderTradeDelivery
     public ?SupplyChainEvent $chainEvent = null;
 
     #[Type(ReferencedDocument::class)]
+    #[SerializedName('DespatchAdviceReferencedDocument')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?ReferencedDocument $despatchAdviceReferencedDocument = null;
+
+    #[Type(ReferencedDocument::class)]
+    #[SerializedName('ReceivingAdviceReferencedDocument')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?ReferencedDocument $receivingAdviceReferencedDocument = null;
+
+    #[Type(ReferencedDocument::class)]
     #[SerializedName('DeliveryNoteReferencedDocument')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?ReferencedDocument $deliveryNoteReferencedDocument = null;

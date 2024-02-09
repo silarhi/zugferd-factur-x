@@ -27,6 +27,11 @@ class ReferencedDocument
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Id $uriid = null;
 
+    #[Type(Id::class)]
+    #[SerializedName('LineID')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Id $lineID = null;
+
     #[Type('string')]
     #[SerializedName('TypeCode')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
@@ -41,6 +46,11 @@ class ReferencedDocument
     #[SerializedName('AttachmentBinaryObject')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?BinaryObject $attachmentBinaryObject = null;
+
+    #[Type('string')]
+    #[SerializedName('ReferenceTypeCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?string $referenceTypeCode = null;
 
     #[Type(FormattedDateTime::class)]
     #[SerializedName('FormattedIssueDateTime')]

@@ -29,14 +29,44 @@ class HeaderTradeSettlement
     public ?string $paymentReference = null;
 
     #[Type('string')]
+    #[SerializedName('TaxCurrencyCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?string $taxCurrency = null;
+
+    #[Type('string')]
     #[SerializedName('InvoiceCurrencyCode')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public string $currency;
+
+    #[Type('string')]
+    #[SerializedName('InvoiceIssuerReference')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?string $invoiceIssuerReference = null;
+
+    #[Type(TradeParty::class)]
+    #[SerializedName('InvoicerTradeParty')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?TradeParty $invoicerTradeParty = null;
+
+    #[Type(TradeParty::class)]
+    #[SerializedName('InvoiceeTradeParty')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?TradeParty $invoiceeTradeParty = null;
+
+    #[Type(TradeParty::class)]
+    #[SerializedName('PayerTradeParty')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?TradeParty $payerTradeParty = null;
 
     #[Type(TradeParty::class)]
     #[SerializedName('PayeeTradeParty')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?TradeParty $payeeTradeParty = null;
+
+    #[Type(TradeCurrencyExchange::class)]
+    #[SerializedName('TaxApplicableTradeCurrencyExchange')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?TradeCurrencyExchange $taxApplicableTradeCurrencyExchange = null;
 
     /**
      * @var TradeSettlementPaymentMeans[]
@@ -51,6 +81,11 @@ class HeaderTradeSettlement
     #[Type('array<Easybill\ZUGFeRD\Model\TradeTax>')]
     #[XmlList(inline: true, entry: 'ApplicableTradeTax', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $tradeTaxes = [];
+
+    #[Type(Period::class)]
+    #[SerializedName('BillingSpecifiedPeriod')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Period $billingSpecifiedPeriod = null;
 
     /**
      * @var TradeAllowanceCharge[]
@@ -82,4 +117,11 @@ class HeaderTradeSettlement
     #[SerializedName('InvoiceReferencedDocument')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?ReferencedDocument $invoiceReferencedDocument = null;
+
+    /**
+     * @var TradeAccountingAccount[]
+     */
+    #[Type('array<Easybill\ZUGFeRD\Model\TradeAccountingAccount>')]
+    #[XmlList(inline: true, entry: 'ReceivableSpecifiedTradeAccountingAccount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public array $tradeAccountingAccount = [];
 }

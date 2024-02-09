@@ -15,20 +15,15 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
-class CreditorFinancialAccount
+class ProductCharacteristic
 {
-    #[Type(Id::class)]
-    #[SerializedName('IBANID')]
+    #[Type('string')]
+    #[SerializedName('Description')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Id $ibanId = null;
+    public ?string $description = null;
 
     #[Type('string')]
-    #[SerializedName('AccountName')]
+    #[SerializedName('Value')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?string $AccountName = null;
-
-    #[Type(Id::class)]
-    #[SerializedName('ProprietaryID')]
-    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Id $proprietaryId = null;
+    public ?string $value = null;
 }

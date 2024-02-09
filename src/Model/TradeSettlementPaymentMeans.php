@@ -27,6 +27,11 @@ class TradeSettlementPaymentMeans
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $information = null;
 
+    #[Type(DebtorFinancialAccount::class)]
+    #[SerializedName('PayerPartyDebtorFinancialAccount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?DebtorFinancialAccount $payerPartyDebtorFinancialAccount = null;
+
     #[Type(CreditorFinancialAccount::class)]
     #[SerializedName('PayeePartyCreditorFinancialAccount')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
@@ -37,10 +42,6 @@ class TradeSettlementPaymentMeans
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?CreditorFinancialInstitution $payeeSpecifiedCreditorFinancialInstitution = null;
 
-    #[Type(DebtorFinancialAccount::class)]
-    #[SerializedName('PayerPartyDebtorFinancialAccount')]
-    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?DebtorFinancialAccount $payerPartyDebtorFinancialAccount = null;
     #[Type(TradeSettlementFinancialCard::class)]
     #[SerializedName('ApplicableTradeSettlementFinancialCard')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]

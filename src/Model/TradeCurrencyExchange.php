@@ -15,25 +15,25 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
-class LineTradeDelivery
+class TradeCurrencyExchange
 {
-    #[Type(Quantity::class)]
-    #[SerializedName('BilledQuantity')]
+    #[Type('string')]
+    #[SerializedName('SourceCurrencyCode')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public Quantity $billedQuantity;
+    public string $sourceCurrency;
 
-    #[Type(Quantity::class)]
-    #[SerializedName('ChargeFreeQuantity')]
+    #[Type('string')]
+    #[SerializedName('TargetCurrencyCode')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Quantity $chargeFreeQuantity = null;
+    public string $targetCurrencyCode;
 
-    #[Type(Quantity::class)]
-    #[SerializedName('PackageQuantity')]
+    #[Type('float')]
+    #[SerializedName('ConversionRate')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Quantity $packageQuantity = null;
+    public ?float $conversionRate = null;
 
-    #[Type(SupplyChainEvent::class)]
-    #[SerializedName('ActualDeliverySupplyChainEvent')]
+    #[Type(DateTime::class)]
+    #[SerializedName('ConversionRateDateTime')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?SupplyChainEvent $chainEvent = null;
+    public ?DateTime $conversionRateDateTime = null;
 }

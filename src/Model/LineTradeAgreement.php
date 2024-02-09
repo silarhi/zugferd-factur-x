@@ -14,9 +14,32 @@ namespace Easybill\ZUGFeRD\Model;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 
 class LineTradeAgreement
 {
+    #[Type(ReferencedDocument::class)]
+    #[SerializedName('BuyerOrderReferencedDocument')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?ReferencedDocument $buyerOrderReferencedDocument = null;
+
+    #[Type(ReferencedDocument::class)]
+    #[SerializedName('QuotationReferencedDocument')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?ReferencedDocument $quotationReferencedDocument = null;
+
+    #[Type(ReferencedDocument::class)]
+    #[SerializedName('ContractReferencedDocument')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?ReferencedDocument $contractReferencedDocument = null;
+
+    /**
+     * @var ReferencedDocument[]
+     */
+    #[Type('array<Easybill\ZUGFeRD\Model\ReferencedDocument>')]
+    #[XmlList(inline: true, entry: 'AdditionalReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public array $additionalReferencedDocuments = [];
+
     #[Type(TradePrice::class)]
     #[SerializedName('GrossPriceProductTradePrice')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]

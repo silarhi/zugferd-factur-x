@@ -15,25 +15,30 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
-class LineTradeDelivery
+class TradePaymentDiscountTerms
 {
-    #[Type(Quantity::class)]
-    #[SerializedName('BilledQuantity')]
+    #[Type(DateTime::class)]
+    #[SerializedName('BasisDateTime')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public Quantity $billedQuantity;
+    public ?DateTime $basisDateTime = null;
 
-    #[Type(Quantity::class)]
-    #[SerializedName('ChargeFreeQuantity')]
+    #[Type(Measure::class)]
+    #[SerializedName('BasisPeriodMeasure')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Quantity $chargeFreeQuantity = null;
+    public ?Measure $basisPeriodMeasure = null;
 
-    #[Type(Quantity::class)]
-    #[SerializedName('PackageQuantity')]
+    #[Type(Amount::class)]
+    #[SerializedName('BasisAmount')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?Quantity $packageQuantity = null;
+    public ?Amount $basisAmount = null;
 
-    #[Type(SupplyChainEvent::class)]
-    #[SerializedName('ActualDeliverySupplyChainEvent')]
+    #[Type('string')]
+    #[SerializedName('CalculationPercent')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?SupplyChainEvent $chainEvent = null;
+    public ?string $calculationPercent = null;
+
+    #[Type(Amount::class)]
+    #[SerializedName('ActualPenaltyAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Amount $actualPenaltyAmount = null;
 }
