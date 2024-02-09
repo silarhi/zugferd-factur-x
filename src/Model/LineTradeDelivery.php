@@ -22,6 +22,16 @@ class LineTradeDelivery
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public Quantity $billedQuantity;
 
+    #[Type(Quantity::class)]
+    #[SerializedName('ChargeFreeQuantity')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Quantity $chargeFreeQuantity = null;
+
+    #[Type(Quantity::class)]
+    #[SerializedName('PackageQuantity')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Quantity $packageQuantity = null;
+
     #[Type(SupplyChainEvent::class)]
     #[SerializedName('ActualDeliverySupplyChainEvent')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]

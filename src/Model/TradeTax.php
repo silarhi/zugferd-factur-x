@@ -11,67 +11,69 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
-use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
 
 class TradeTax
 {
-    #[JMS\Type(Amount::class)]
-    #[JMS\SerializedName('CalculatedAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Amount::class)]
+    #[SerializedName('CalculatedAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $calculatedAmount = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('TypeCode')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('TypeCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public string $typeCode;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('ExemptionReason')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('ExemptionReason')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $exemptionReason = null;
 
-    #[JMS\Type(Amount::class)]
-    #[JMS\SerializedName('BasisAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Amount::class)]
+    #[SerializedName('BasisAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $basisAmount = null;
 
-    #[JMS\Type(Amount::class)]
-    #[JMS\SerializedName('LineTotalBasisAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Amount::class)]
+    #[SerializedName('LineTotalBasisAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $lineTotalBasisAmount = null;
 
-    #[JMS\Type(Amount::class)]
-    #[JMS\SerializedName('AllowanceChargeBasisAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Amount::class)]
+    #[SerializedName('AllowanceChargeBasisAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $allowanceChargeBasisAmount = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('ApplicablePercent')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('ApplicablePercent')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $applicablePercent = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('CategoryCode')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('CategoryCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $categoryCode = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('ExemptionReasonCode')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('ExemptionReasonCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $exemptionReasonCode = null;
 
-    #[JMS\Type(DateTime::class)]
-    #[JMS\SerializedName('TaxPointDate')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(DateTime::class)]
+    #[SerializedName('TaxPointDate')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?DateTime $taxPointDate = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('DueDateTypeCode')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('DueDateTypeCode')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $dueDateTypeCode = null;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('RateApplicablePercent')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('RateApplicablePercent')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $rateApplicablePercent = null;
 }

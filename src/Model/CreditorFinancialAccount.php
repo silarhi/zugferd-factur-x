@@ -26,4 +26,9 @@ class CreditorFinancialAccount
     #[SerializedName('AccountName')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $AccountName = null;
+
+    #[Type(Id::class)]
+    #[SerializedName('ProprietaryID')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?Id $proprietaryId = null;
 }

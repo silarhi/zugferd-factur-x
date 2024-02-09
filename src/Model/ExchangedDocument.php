@@ -49,7 +49,7 @@ class ExchangedDocument
     /**
      * @var Note[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\Note>')]
+    #[Type('array<' . Note::class . '>')]
     #[XmlList(inline: true, entry: 'IncludedNote', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $notes = [];
 }

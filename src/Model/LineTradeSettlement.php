@@ -21,21 +21,21 @@ class LineTradeSettlement
     /**
      * @var TradeTax[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeTax>')]
+    #[Type('array<' . TradeTax::class . '>')]
     #[XmlList(inline: true, entry: 'ApplicableTradeTax', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $tradeTax = [];
-
-    /**
-     * @var TradeAllowanceCharge[]
-     */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeAllowanceCharge>')]
-    #[XmlList(inline: true, entry: 'SpecifiedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public array $specifiedTradeAllowanceCharge = [];
 
     #[Type(Period::class)]
     #[SerializedName('BillingSpecifiedPeriod')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Period $billingSpecifiedPeriod = null;
+
+    /**
+     * @var TradeAllowanceCharge[]
+     */
+    #[Type('array<' . TradeAllowanceCharge::class . '>')]
+    #[XmlList(inline: true, entry: 'SpecifiedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public array $specifiedTradeAllowanceCharge = [];
 
     #[Type(TradeSettlementLineMonetarySummation::class)]
     #[SerializedName('SpecifiedTradeSettlementLineMonetarySummation')]
@@ -45,7 +45,7 @@ class LineTradeSettlement
     /**
      * @var TradeAccountingAccount[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeAccountingAccount>')]
+    #[Type('array<' . TradeAccountingAccount::class . '>')]
     #[XmlList(inline: true, entry: 'ReceivableSpecifiedTradeAccountingAccount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $tradeAccountingAccount = [];
 }

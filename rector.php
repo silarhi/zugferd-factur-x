@@ -3,9 +3,8 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the CFONB Parser package.
+ * This file is part of the ZUGFeRD PHP package.
  *
- * (c) SILARHI <dev@silarhi.fr>
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
@@ -35,5 +34,7 @@ return static function (RectorConfig $config): void {
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlAttribute'),
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlElement'),
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlList'),
+        new AnnotationToAttribute('JMS\Serializer\Annotation\XmlRoot'),
+        new AnnotationToAttribute('JMS\Serializer\Annotation\XmlNamespace'),
     ]);
 };

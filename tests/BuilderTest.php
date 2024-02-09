@@ -84,7 +84,7 @@ Handelsregisternummer: H A 123
 
         $item1->specifiedTradeProduct = new TradeProduct();
         $item1->specifiedTradeProduct->name = 'Trennblätter A4';
-        $item1->specifiedTradeProduct->sellerAssignedID = 'TB100A4';
+        $item1->specifiedTradeProduct->sellerAssignedID = Id::create('TB100A4');
         $item1->specifiedTradeProduct->globalID = Id::create('4012345001235', '0160');
 
         $item1->tradeAgreement = new LineTradeAgreement();
@@ -107,7 +107,7 @@ Handelsregisternummer: H A 123
 
         $item2->specifiedTradeProduct = new TradeProduct();
         $item2->specifiedTradeProduct->name = 'Joghurt Banane';
-        $item2->specifiedTradeProduct->sellerAssignedID = 'ARNR2';
+        $item2->specifiedTradeProduct->sellerAssignedID = Id::create('ARNR2');
         $item2->specifiedTradeProduct->globalID = Id::create('4000050986428', '0160');
 
         $item2->tradeAgreement = new LineTradeAgreement();
@@ -206,7 +206,8 @@ Handelsregisternummer: H A 123
 
         $xml = Builder::create()->transform($invoice);
         self::assertNotEmpty($xml);
-        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/zugferd_2p1_XRECHNUNG_Einfach.xml');
+        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/2.1/zugferd_2p1_XRECHNUNG_Einfach.xml');
+        self::assertNotFalse($referenceFile);
         $referenceFile = ReaderAndBuildTest::reformatXml($referenceFile);
         $xml = ReaderAndBuildTest::reformatXml($xml);
         self::assertEquals($referenceFile, $xml);
@@ -244,7 +245,7 @@ Handelsregisternummer: H A 123
 
         $item1->specifiedTradeProduct = new TradeProduct();
         $item1->specifiedTradeProduct->name = 'Trennblätter A4';
-        $item1->specifiedTradeProduct->sellerAssignedID = 'TB100A4';
+        $item1->specifiedTradeProduct->sellerAssignedID = Id::create('TB100A4');
         $item1->specifiedTradeProduct->globalID = Id::create('4012345001235', '0160');
         $item1->specifiedTradeProduct->tradeCountry = TradeCountry::create('DE');
 
@@ -277,7 +278,7 @@ Handelsregisternummer: H A 123
 
         $item2->specifiedTradeProduct = new TradeProduct();
         $item2->specifiedTradeProduct->name = 'Joghurt Banane';
-        $item2->specifiedTradeProduct->sellerAssignedID = 'ARNR2';
+        $item2->specifiedTradeProduct->sellerAssignedID = Id::create('ARNR2');
         $item2->specifiedTradeProduct->globalID = Id::create('4000050986428', '0160');
 
         $item2->tradeAgreement = new LineTradeAgreement();
@@ -398,6 +399,7 @@ Handelsregisternummer: H A 123
         $xml = Builder::create()->transform($invoice);
         self::assertNotEmpty($xml);
         $referenceFile = file_get_contents(__DIR__ . '/data/zugferd_2p1_XRECHNUNG_Extended.xml');
+        self::assertNotFalse($referenceFile);
         $referenceFile = ReaderAndBuildTest::reformatXml($referenceFile);
         $xml = ReaderAndBuildTest::reformatXml($xml);
         self::assertEquals($referenceFile, $xml);
@@ -435,14 +437,14 @@ Handelsregisternummer: H A 123
         // <ram:SpecifiedTradeProduct>
         $lineItem1->specifiedTradeProduct = new TradeProduct();
         $lineItem1->specifiedTradeProduct->globalID = Id::create('3518370400049', '0160');
-        $lineItem1->specifiedTradeProduct->sellerAssignedID = 'NOUG250';
+        $lineItem1->specifiedTradeProduct->sellerAssignedID = Id::create('NOUG250');
         $lineItem1->specifiedTradeProduct->name = 'Nougat de l\'Abbaye 250g';
         // </ram:SpecifiedTradeProduct>
 
         // <ram:SpecifiedLineTradeAgreement>
         $lineItem1->tradeAgreement = new LineTradeAgreement();
         $lineItem1->tradeAgreement->grossPrice = TradePrice::create('4.55');
-        $lineItem1->tradeAgreement->grossPrice->appliedTradeAllowanceCharge = $tradeAllowanceCharge = new TradeAllowanceCharge();
+        $lineItem1->tradeAgreement->grossPrice->appliedTradeAllowanceCharges[] = $tradeAllowanceCharge = new TradeAllowanceCharge();
         $tradeAllowanceCharge->indicator = $indicator = new Indicator();
         $indicator->indicator = false;
         $tradeAllowanceCharge->actualAmount = Amount::create('0.45');
@@ -472,7 +474,7 @@ Handelsregisternummer: H A 123
         // <ram:SpecifiedTradeProduct>
         $lineItem2->specifiedTradeProduct = new TradeProduct();
         $lineItem2->specifiedTradeProduct->globalID = Id::create('3518370200090', '0160');
-        $lineItem2->specifiedTradeProduct->sellerAssignedID = 'BRAIS300';
+        $lineItem2->specifiedTradeProduct->sellerAssignedID = Id::create('BRAIS300');
         $lineItem2->specifiedTradeProduct->name = 'Biscuits aux raisins 300g';
         // </ram:SpecifiedTradeProduct>
 
@@ -502,7 +504,7 @@ Handelsregisternummer: H A 123
 
         // <ram:SpecifiedTradeProduct>
         $lineItem3->specifiedTradeProduct = new TradeProduct();
-        $lineItem3->specifiedTradeProduct->sellerAssignedID = 'HOLANCL';
+        $lineItem3->specifiedTradeProduct->sellerAssignedID = Id::create('HOLANCL');
         $lineItem3->specifiedTradeProduct->name = 'Huile d\'olive à l\'ancienne';
         // </ram:SpecifiedTradeProduct>
 
@@ -660,7 +662,8 @@ Handelsregisternummer: H A 123
 
         $xml = Builder::create()->transform($invoice);
         self::assertNotEmpty($xml);
-        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/facturx_EXTENDED.xml');
+        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/2.2/EXTENDED/Facture_FR_EXTENDED.xml');
+        self::assertNotFalse($referenceFile);
         $referenceFile = ReaderAndBuildTest::reformatXml($referenceFile);
         $xml = ReaderAndBuildTest::reformatXml($xml);
         self::assertEquals($referenceFile, $xml);

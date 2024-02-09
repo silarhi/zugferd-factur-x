@@ -26,7 +26,7 @@ class TradeParty
     /**
      * @var Id[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\Id>')]
+    #[Type('array<' . Id::class . '>')]
     #[XmlList(inline: true, entry: 'GlobalID', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $globalID = [];
 
@@ -60,10 +60,15 @@ class TradeParty
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?TradeAddress $postalTradeAddress = null;
 
+    #[Type(UniversalCommunication::class)]
+    #[SerializedName('URIUniversalCommunication')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public ?UniversalCommunication $URIUniversalCommunication = null;
+
     /**
      * @var TaxRegistration[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TaxRegistration>')]
+    #[Type('array<' . TaxRegistration::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedTaxRegistration', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public $taxRegistrations = [];
+    public array $taxRegistrations = [];
 }

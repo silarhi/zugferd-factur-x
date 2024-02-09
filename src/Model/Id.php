@@ -18,20 +18,14 @@ use JMS\Serializer\Annotation\XmlValue;
 
 class Id
 {
-    /**
-     * @var string
-     */
     #[Type('string')]
     #[XmlAttribute]
     #[SerializedName('schemeID')]
-    public $schemeID;
+    public ?string $schemeID = null;
 
-    /**
-     * @var string
-     */
     #[Type('string')]
     #[XmlValue(cdata: false)]
-    public $value;
+    public string $value;
 
     public static function create(string $id, ?string $schemeID = null): self
     {
