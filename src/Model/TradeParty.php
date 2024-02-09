@@ -70,5 +70,5 @@ class TradeParty
      */
     #[Type('array<' . TaxRegistration::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedTaxRegistration', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public $taxRegistrations = [];
+    public array $taxRegistrations = [];
 }
