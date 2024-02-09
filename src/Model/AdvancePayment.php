@@ -11,20 +11,24 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
+use Easybill\ZUGFeRD\Model\JMS\SerializedName;
+use Easybill\ZUGFeRD\Model\JMS\Type;
+use Easybill\ZUGFeRD\Model\JMS\XmlElement;
+
 class AdvancePayment
 {
-    #[JMS\Type(Amount::class)]
-    #[JMS\SerializedName('PaidAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Amount::class)]
+    #[SerializedName('PaidAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Amount $totalPrepaidAmount = null;
 
-    #[JMS\Type(DateTimeString::class)]
-    #[JMS\SerializedName('FormattedReceivedDateTime')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(DateTimeString::class)]
+    #[SerializedName('FormattedReceivedDateTime')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?DateTimeString $formattedReceivedDateTime = null;
 
-    #[JMS\Type(TradeTax::class)]
-    #[JMS\SerializedName('IncludedTradeTax')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(TradeTax::class)]
+    #[SerializedName('IncludedTradeTax')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?TradeTax $includedTradeTax = null;
 }

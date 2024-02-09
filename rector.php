@@ -34,5 +34,7 @@ return static function (RectorConfig $config): void {
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlAttribute'),
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlElement'),
         new AnnotationToAttribute('JMS\Serializer\Annotation\XmlList'),
+        new AnnotationToAttribute('JMS\Serializer\Annotation\XmlRoot'),
+        new AnnotationToAttribute('JMS\Serializer\Annotation\XmlNamespace'),
     ]);
 };
