@@ -71,14 +71,14 @@ class HeaderTradeSettlement
     /**
      * @var TradeSettlementPaymentMeans[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeSettlementPaymentMeans>')]
+    #[Type('array<' . TradeSettlementPaymentMeans::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedTradeSettlementPaymentMeans', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $specifiedTradeSettlementPaymentMeans = [];
 
     /**
      * @var TradeTax[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeTax>')]
+    #[Type('array<' . TradeTax::class . '>')]
     #[XmlList(inline: true, entry: 'ApplicableTradeTax', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $tradeTaxes = [];
 
@@ -90,21 +90,21 @@ class HeaderTradeSettlement
     /**
      * @var TradeAllowanceCharge[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeAllowanceCharge>')]
+    #[Type('array<' . TradeAllowanceCharge::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $specifiedTradeAllowanceCharge = [];
 
     /**
      * @var LogisticsServiceCharge[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\LogisticsServiceCharge>')]
+    #[Type('array<' . LogisticsServiceCharge::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedLogisticsServiceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $specifiedLogisticsServiceCharge = [];
 
     /**
      * @var TradePaymentTerms[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradePaymentTerms>')]
+    #[Type('array<' . TradePaymentTerms::class . '>')]
     #[XmlList(inline: true, entry: 'SpecifiedTradePaymentTerms', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $specifiedTradePaymentTerms = [];
 
@@ -121,7 +121,7 @@ class HeaderTradeSettlement
     /**
      * @var TradeAccountingAccount[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeAccountingAccount>')]
+    #[Type('array<' . TradeAccountingAccount::class . '>')]
     #[XmlList(inline: true, entry: 'ReceivableSpecifiedTradeAccountingAccount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $tradeAccountingAccount = [];
 }

@@ -31,7 +31,7 @@ class TradePrice
     /**
      * @var TradeAllowanceCharge[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\TradeAllowanceCharge>')]
+    #[Type('array<' . TradeAllowanceCharge::class . '>')]
     #[XmlList(inline: true, entry: 'AppliedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $appliedTradeAllowanceCharges = [];
 

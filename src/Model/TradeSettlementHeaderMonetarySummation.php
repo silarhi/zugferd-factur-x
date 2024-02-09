@@ -36,14 +36,14 @@ class TradeSettlementHeaderMonetarySummation
     /**
      * @var Amount[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\Amount>')]
+    #[Type('array<' . Amount::class . '>')]
     #[XmlList(inline: true, entry: 'TaxBasisTotalAmount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $taxBasisTotalAmount = [];
 
     /**
      * @var Amount[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\Amount>')]
+    #[Type('array<' . Amount::class . '>')]
     #[XmlList(inline: true, entry: 'TaxTotalAmount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $taxTotalAmount = [];
 
@@ -55,7 +55,7 @@ class TradeSettlementHeaderMonetarySummation
     /**
      * @var Amount[]
      */
-    #[Type('array<Easybill\ZUGFeRD\Model\Amount>')]
+    #[Type('array<' . Amount::class . '>')]
     #[XmlList(inline: true, entry: 'GrandTotalAmount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public array $grandTotalAmount = [];
 
