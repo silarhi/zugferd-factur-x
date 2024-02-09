@@ -51,9 +51,10 @@ class ReaderAndBuildTest extends TestCase
     public function dataProvider(): array
     {
         return [
-            ['zugferd_2p1_BASIC-WL_Einfach.xml'],
-            ['zugferd_2p1_EN16931_Einfach.xml'],
-            ['zugferd_2p1_XRECHNUNG_Einfach.xml'],
+            // 2.1.1
+            ['2.1/zugferd_2p1_BASIC-WL_Einfach.xml'],
+            ['2.1/zugferd_2p1_EN16931_Einfach.xml'],
+            ['2.1/zugferd_2p1_XRECHNUNG_Einfach.xml'],
         ];
     }
 }

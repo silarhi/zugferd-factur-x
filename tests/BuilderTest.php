@@ -206,7 +206,7 @@ Handelsregisternummer: H A 123
 
         $xml = Builder::create()->transform($invoice);
         self::assertNotEmpty($xml);
-        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/zugferd_2p1_XRECHNUNG_Einfach.xml');
+        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/2.1/zugferd_2p1_XRECHNUNG_Einfach.xml');
         $referenceFile = ReaderAndBuildTest::reformatXml($referenceFile);
         $xml = ReaderAndBuildTest::reformatXml($xml);
         self::assertEquals($referenceFile, $xml);
@@ -660,7 +660,7 @@ Handelsregisternummer: H A 123
 
         $xml = Builder::create()->transform($invoice);
         self::assertNotEmpty($xml);
-        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/facturx_EXTENDED.xml');
+        $referenceFile = file_get_contents(__DIR__ . '/data/official_example_xml/2.2/EXTENDED/Facture_FR_EXTENDED.xml');
         $referenceFile = ReaderAndBuildTest::reformatXml($referenceFile);
         $xml = ReaderAndBuildTest::reformatXml($xml);
         self::assertEquals($referenceFile, $xml);

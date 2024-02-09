@@ -19,7 +19,7 @@ class ValidatorTest extends TestCase
     public function testXsdSuccess(): void
     {
         $validator = new Validator();
-        $xml = file_get_contents(__DIR__ . '/data/official_example_xml/zugferd_2p1_EN16931_Einfach.xml');
+        $xml = file_get_contents(__DIR__ . '/data/official_example_xml/2.1/zugferd_2p1_EN16931_Einfach.xml');
         $errors = $validator->validateAgainstXsd($xml, Validator::SCHEMA_EN16931);
         self::assertNull($errors, $errors ?? '');
     }
