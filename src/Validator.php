@@ -15,11 +15,11 @@ use DOMDocument;
 
 class Validator
 {
-    public const SCHEMA_BASIC = __DIR__ . '/Schema/BASIC/FACTUR-X_BASIC.xsd';
-    public const SCHEMA_BASIC_WL = __DIR__ . '/Schema/BASIC-WL/FACTUR-X_BASIC-WL.xsd';
-    public const SCHEMA_EN16931 = __DIR__ . '/Schema/EN16931/FACTUR-X_EN16931.xsd';
-    public const SCHEMA_EXTENDED = __DIR__ . '/Schema/EXTENDED/FACTUR-X_EXTENDED.xsd';
-    public const SCHEMA_MINIMUM = __DIR__ . '/Schema/MINIMUM/FACTUR-X_MINIMUM.xsd';
+    public const SCHEMA_BASIC = __DIR__ . '/../schema/BASIC/FACTUR-X_BASIC.xsd';
+    public const SCHEMA_BASIC_WL = __DIR__ . '/../schema/BASIC-WL/FACTUR-X_BASIC-WL.xsd';
+    public const SCHEMA_EN16931 = __DIR__ . '/../schema/EN16931/FACTUR-X_EN16931.xsd';
+    public const SCHEMA_EXTENDED = __DIR__ . '/../schema/EXTENDED/FACTUR-X_EXTENDED.xsd';
+    public const SCHEMA_MINIMUM = __DIR__ . '/../schema/MINIMUM/FACTUR-X_MINIMUM.xsd';
 
     public function validateAgainstXsd(string $xml, string $schemaFile): ?string
     {
