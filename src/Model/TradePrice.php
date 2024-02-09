@@ -12,30 +12,33 @@ declare(strict_types=1);
 namespace Easybill\ZUGFeRD\Model;
 
 use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlList;
 
 class TradePrice
 {
-    #[JMS\Type(Amount::class)]
+    #[Type(Amount::class)]
     #[JMS\SerializedName('ChargeAmount')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public Amount $chargeAmount;
 
-    #[JMS\Type(Quantity::class)]
+    #[Type(Quantity::class)]
     #[JMS\SerializedName('BasisQuantity')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Quantity $basisQuantity = null;
 
-    #[JMS\Type(TradeAllowanceCharge::class)]
-    #[JMS\SerializedName('AppliedTradeAllowanceCharge')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?TradeAllowanceCharge $appliedTradeAllowanceCharge = null;
+    /**
+     * @var TradeAllowanceCharge[]
+     */
+    #[Type('array<Easybill\ZUGFeRD\Model\TradeAllowanceCharge>')]
+    #[XmlList(inline: true, entry: 'AppliedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    public array $appliedTradeAllowanceCharges = [];
 
-    public static function create(string $amount, ?Quantity $quantity = null, ?TradeAllowanceCharge $appliedTradeAllowanceCharge = null): self
+    public static function create(string $amount, ?Quantity $quantity = null): self
     {
         $self = new self();
         $self->chargeAmount = Amount::create($amount);
         $self->basisQuantity = $quantity;
-        $self->appliedTradeAllowanceCharge = $appliedTradeAllowanceCharge;
 
         return $self;
     }

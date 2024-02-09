@@ -442,7 +442,7 @@ Handelsregisternummer: H A 123
         // <ram:SpecifiedLineTradeAgreement>
         $lineItem1->tradeAgreement = new LineTradeAgreement();
         $lineItem1->tradeAgreement->grossPrice = TradePrice::create('4.55');
-        $lineItem1->tradeAgreement->grossPrice->appliedTradeAllowanceCharge = $tradeAllowanceCharge = new TradeAllowanceCharge();
+        $lineItem1->tradeAgreement->grossPrice->appliedTradeAllowanceCharges[] = $tradeAllowanceCharge = new TradeAllowanceCharge();
         $tradeAllowanceCharge->indicator = $indicator = new Indicator();
         $indicator->indicator = false;
         $tradeAllowanceCharge->actualAmount = Amount::create('0.45');
