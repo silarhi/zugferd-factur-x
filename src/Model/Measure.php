@@ -11,16 +11,19 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
-use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlValue;
 
 class Measure
 {
-    #[JMS\Type('string')]
-    #[JMS\XmlAttribute]
-    #[JMS\SerializedName('unitCode')]
+    #[Type('string')]
+    #[XmlAttribute]
+    #[SerializedName('unitCode')]
     public ?string $unitCode = null;
 
-    #[JMS\Type('int')]
-    #[JMS\XmlValue(cdata: false)]
+    #[Type('int')]
+    #[XmlValue(cdata: false)]
     public ?int $value = null;
 }

@@ -11,22 +11,24 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
-use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
 
 class LegalOrganization
 {
-    #[JMS\Type(Id::class)]
-    #[JMS\SerializedName('ID')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(Id::class)]
+    #[SerializedName('ID')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public Id $id;
 
-    #[JMS\Type('string')]
-    #[JMS\SerializedName('TradingBusinessName')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type('string')]
+    #[SerializedName('TradingBusinessName')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?string $tradingBusinessName = null;
 
-    #[JMS\Type(TradeAddress::class)]
-    #[JMS\SerializedName('PostalTradeAddress')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[Type(TradeAddress::class)]
+    #[SerializedName('PostalTradeAddress')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?TradeAddress $postalTradeAddress = null;
 }

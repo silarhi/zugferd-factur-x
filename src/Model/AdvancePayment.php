@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
-use Easybill\ZUGFeRD\Model\JMS\SerializedName;
-use Easybill\ZUGFeRD\Model\JMS\Type;
-use Easybill\ZUGFeRD\Model\JMS\XmlElement;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
 
 class AdvancePayment
 {

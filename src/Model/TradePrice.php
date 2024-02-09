@@ -11,20 +11,21 @@ declare(strict_types=1);
 
 namespace Easybill\ZUGFeRD\Model;
 
-use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlList;
 
 class TradePrice
 {
     #[Type(Amount::class)]
-    #[JMS\SerializedName('ChargeAmount')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[SerializedName('ChargeAmount')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public Amount $chargeAmount;
 
     #[Type(Quantity::class)]
-    #[JMS\SerializedName('BasisQuantity')]
-    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[SerializedName('BasisQuantity')]
+    #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Quantity $basisQuantity = null;
 
     /**
