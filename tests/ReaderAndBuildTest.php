@@ -20,7 +20,7 @@ class ReaderAndBuildTest extends TestCase
 {
     public static function orderCrossIndustryInvoiceAttributes(string $xml): string
     {
-        return preg_replace_callback('/<rsm:CrossIndustryInvoice (((xmlns:(\w)+="[^"]+")\s*)+)>/', function (array $matches) {
+        return (string) preg_replace_callback('/<rsm:CrossIndustryInvoice (((xmlns:(\w)+="[^"]+")\s*)+)>/', function (array $matches) {
             $parts = explode(' ', $matches[1]);
 
             foreach ($parts as $i => $part) {
@@ -38,20 +38,21 @@ class ReaderAndBuildTest extends TestCase
 
     public static function reformatXml(string $xml): string
     {
-        $xml = preg_replace('/<!--(.|\s)*?-->/', '', $xml);
+        $xml = (string) preg_replace('/<!--(.|\s)*?-->/', '', $xml);
 
         $doc = new DOMDocument('1.0', 'UTF-8');
         $doc->preserveWhiteSpace = false;
         $doc->formatOutput = true;
         $doc->loadXML($xml);
 
-        return self::orderCrossIndustryInvoiceAttributes($doc->saveXML());
+        return self::orderCrossIndustryInvoiceAttributes((string) $doc->saveXML());
     }
 
     /** @dataProvider dataProvider */
     public function testGetDocument(string $filename): void
     {
         $xml = file_get_contents(__DIR__ . '/data/official_example_xml/' . $filename);
+        self::assertNotFalse($xml);
         $obj = Reader::create()->transform($xml);
         $str = Builder::create()->transform($obj);
 

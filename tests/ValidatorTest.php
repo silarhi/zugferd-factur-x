@@ -20,6 +20,7 @@ class ValidatorTest extends TestCase
     {
         $validator = new Validator();
         $xml = file_get_contents(__DIR__ . '/data/official_example_xml/2.1/zugferd_2p1_EN16931_Einfach.xml');
+        self::assertNotFalse($xml);
         $errors = $validator->validateAgainstXsd($xml, Validator::SCHEMA_EN16931);
         self::assertNull($errors, $errors ?? '');
     }
@@ -28,6 +29,7 @@ class ValidatorTest extends TestCase
     {
         $validator = new Validator();
         $xml = file_get_contents(__DIR__ . '/data/broken_example.xml');
+        self::assertNotFalse($xml);
         $errors = $validator->validateAgainstXsd($xml, Validator::SCHEMA_EN16931);
         self::assertNotNull($errors, 'Validator says broken xml is valid.');
     }
