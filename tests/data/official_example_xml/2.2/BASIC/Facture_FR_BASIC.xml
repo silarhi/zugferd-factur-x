@@ -2,7 +2,7 @@
 <rsm:CrossIndustryInvoice xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rsm:ExchangedDocumentContext>
     <ram:GuidelineSpecifiedDocumentContextParameter>
-      <ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>
+      <ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>
     </ram:GuidelineSpecifiedDocumentContextParameter>
   </rsm:ExchangedDocumentContext>
   <rsm:ExchangedDocument>
@@ -22,19 +22,9 @@
       </ram:AssociatedDocumentLineDocument>
       <ram:SpecifiedTradeProduct>
         <ram:GlobalID schemeID="0160">3518370400049</ram:GlobalID>
-        <ram:SellerAssignedID>NOUG250</ram:SellerAssignedID>
         <ram:Name>Nougat de l'Abbaye 250g</ram:Name>
       </ram:SpecifiedTradeProduct>
       <ram:SpecifiedLineTradeAgreement>
-        <ram:GrossPriceProductTradePrice>
-          <ram:ChargeAmount>4.55</ram:ChargeAmount>
-          <ram:AppliedTradeAllowanceCharge>
-            <ram:ChargeIndicator>
-              <udt:Indicator>false</udt:Indicator>
-            </ram:ChargeIndicator>
-            <ram:ActualAmount>0.45</ram:ActualAmount>
-          </ram:AppliedTradeAllowanceCharge>
-        </ram:GrossPriceProductTradePrice>
         <ram:NetPriceProductTradePrice>
           <ram:ChargeAmount>4.10</ram:ChargeAmount>
         </ram:NetPriceProductTradePrice>
@@ -59,13 +49,9 @@
       </ram:AssociatedDocumentLineDocument>
       <ram:SpecifiedTradeProduct>
         <ram:GlobalID schemeID="0160">3518370200090</ram:GlobalID>
-        <ram:SellerAssignedID>BRAIS300</ram:SellerAssignedID>
         <ram:Name>Biscuits aux raisins 300g</ram:Name>
       </ram:SpecifiedTradeProduct>
       <ram:SpecifiedLineTradeAgreement>
-        <ram:GrossPriceProductTradePrice>
-          <ram:ChargeAmount>3.20</ram:ChargeAmount>
-        </ram:GrossPriceProductTradePrice>
         <ram:NetPriceProductTradePrice>
           <ram:ChargeAmount>3.20</ram:ChargeAmount>
         </ram:NetPriceProductTradePrice>
@@ -89,13 +75,9 @@
         <ram:LineID>3</ram:LineID>
       </ram:AssociatedDocumentLineDocument>
       <ram:SpecifiedTradeProduct>
-        <ram:SellerAssignedID>HOLANCL</ram:SellerAssignedID>
         <ram:Name>Huile d'olive à l'ancienne</ram:Name>
       </ram:SpecifiedTradeProduct>
       <ram:SpecifiedLineTradeAgreement>
-        <ram:GrossPriceProductTradePrice>
-          <ram:ChargeAmount>19.80</ram:ChargeAmount>
-        </ram:GrossPriceProductTradePrice>
         <ram:NetPriceProductTradePrice>
           <ram:ChargeAmount>19.80</ram:ChargeAmount>
         </ram:NetPriceProductTradePrice>
@@ -120,15 +102,6 @@
         <ram:SpecifiedLegalOrganization>
           <ram:ID schemeID="0002">99999999800010</ram:ID>
         </ram:SpecifiedLegalOrganization>
-        <ram:DefinedTradeContact>
-          <ram:PersonName>Tony Dubois</ram:PersonName>
-          <ram:TelephoneUniversalCommunication>
-            <ram:CompleteNumber>+33 4 72 07 08 56</ram:CompleteNumber>
-          </ram:TelephoneUniversalCommunication>
-          <ram:EmailURIUniversalCommunication>
-            <ram:URIID schemeID="SMTP">tony.dubois@aubonmoulin.fr</ram:URIID>
-          </ram:EmailURIUniversalCommunication>
-        </ram:DefinedTradeContact>
         <ram:PostalTradeAddress>
           <ram:PostcodeCode>84340</ram:PostcodeCode>
           <ram:LineOne>1242 chemin de l'olive</ram:LineOne>
@@ -144,15 +117,6 @@
         <ram:SpecifiedLegalOrganization>
           <ram:ID schemeID="0002">78787878400035</ram:ID>
         </ram:SpecifiedLegalOrganization>
-        <ram:DefinedTradeContact>
-          <ram:PersonName>Alexandre Payet</ram:PersonName>
-          <ram:TelephoneUniversalCommunication>
-            <ram:CompleteNumber>+33 4 72 07 08 67</ram:CompleteNumber>
-          </ram:TelephoneUniversalCommunication>
-          <ram:EmailURIUniversalCommunication>
-            <ram:URIID schemeID="SMTP">alexandre.payet@majolieboutique.net</ram:URIID>
-          </ram:EmailURIUniversalCommunication>
-        </ram:DefinedTradeContact>
         <ram:PostalTradeAddress>
           <ram:PostcodeCode>69001</ram:PostcodeCode>
           <ram:LineOne>35 rue de la République</ram:LineOne>
@@ -170,28 +134,15 @@
         <ram:IssuerAssignedID>MSPE2017</ram:IssuerAssignedID>
       </ram:ContractReferencedDocument>
     </ram:ApplicableHeaderTradeAgreement>
-    <ram:ApplicableHeaderTradeDelivery>
-      <ram:ShipToTradeParty>
-        <ram:PostalTradeAddress>
-          <ram:PostcodeCode>69001</ram:PostcodeCode>
-          <ram:LineOne>35 rue de la République</ram:LineOne>
-          <ram:CityName>Lyon</ram:CityName>
-          <ram:CountryID>FR</ram:CountryID>
-        </ram:PostalTradeAddress>
-      </ram:ShipToTradeParty>
-    </ram:ApplicableHeaderTradeDelivery>
+    <ram:ApplicableHeaderTradeDelivery/>
     <ram:ApplicableHeaderTradeSettlement>
       <ram:PaymentReference>FA-2017-0010</ram:PaymentReference>
       <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
       <ram:SpecifiedTradeSettlementPaymentMeans>
         <ram:TypeCode>30</ram:TypeCode>
-        <ram:Information>Virement sur compte Banque Fiducial</ram:Information>
         <ram:PayeePartyCreditorFinancialAccount>
           <ram:IBANID>FR2012421242124212421242124</ram:IBANID>
         </ram:PayeePartyCreditorFinancialAccount>
-        <ram:PayeeSpecifiedCreditorFinancialInstitution>
-          <ram:BICID>FIDCFR21XXX</ram:BICID>
-        </ram:PayeeSpecifiedCreditorFinancialInstitution>
       </ram:SpecifiedTradeSettlementPaymentMeans>
       <ram:ApplicableTradeTax>
         <ram:CalculatedAmount>16.38</ram:CalculatedAmount>
@@ -210,7 +161,6 @@
         <ram:RateApplicablePercent>5.50</ram:RateApplicablePercent>
       </ram:ApplicableTradeTax>
       <ram:SpecifiedTradePaymentTerms>
-        <ram:Description>30% d'acompte, solde à 30 j</ram:Description>
         <ram:DueDateDateTime>
           <udt:DateTimeString format="102">20171213</udt:DateTimeString>
         </ram:DueDateDateTime>
