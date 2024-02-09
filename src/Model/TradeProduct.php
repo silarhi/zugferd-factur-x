@@ -23,10 +23,10 @@ class TradeProduct
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     public ?Id $globalID = null;
 
-    #[Type('string')]
+    #[Type(Id::class)]
     #[SerializedName('SellerAssignedID')]
     #[XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
-    public ?string $sellerAssignedID = null;
+    public ?Id $sellerAssignedID = null;
 
     #[Type(Id::class)]
     #[SerializedName('BuyerAssignedID')]
