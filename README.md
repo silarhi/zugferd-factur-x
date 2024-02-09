@@ -1,6 +1,9 @@
 # ZUGFeRD PHP
 
-[![Latest Stable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/stable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Total Downloads](https://poser.pugx.org/silarhi/zugferd-factur-x/downloads.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Latest Unstable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/unstable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![License](https://poser.pugx.org/silarhi/zugferd-factur-x/license.png)](https://packagist.org/packages/silarhi/zugferd-factur-x)
+![Build Status](https://github.com/silarhi/zugferd-factur-x/actions/workflows/continuous-integration.yml/badge.svg)
+[![Latest Stable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/stable)](https://packagist.org/packages/silarhi/zugferd-factur-x)
+[![Total Downloads](https://poser.pugx.org/silarhi/zugferd-factur-x/downloads)](https://packagist.org/packages/silarhi/zugferd-factur-x)
+[![License](https://poser.pugx.org/silarhi/zugferd-factur-x/license)](https://packagist.org/packages/silarhi/zugferd-factur-x)
 
 XML generator for ZUGFeRD / Factur-X / XRechnung written in PHP. Convert PHP Objects to XML and back.
 
