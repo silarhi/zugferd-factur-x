@@ -1,7 +1,11 @@
 {
-  "exclude": [
+  "additional_checks": [
     {
-      "name": "README Linting [8.0, latest]"
+      "name": "PHPStan",
+      "job": {
+        "command": "./vendor/bin/phpstan analyse",
+        "php": "8.2"
+      }
     }
   ]
 }
