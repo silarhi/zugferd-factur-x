@@ -1,1 +1,6 @@
 *.php text eol=lf
+/tests/                 export-ignore
+/phpunit.xml            export-ignore
+/phpstan.dist.neon      export-ignore
+/.*                     export-ignore
+/rector.php             export-ignore
