@@ -1,5 +1,4 @@
-ZUGFeRD PHP
-===========
+# ZUGFeRD PHP
 
 [![Latest Stable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/stable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Total Downloads](https://poser.pugx.org/silarhi/zugferd-factur-x/downloads.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![Latest Unstable Version](https://poser.pugx.org/silarhi/zugferd-factur-x/v/unstable.png)](https://packagist.org/packages/silarhi/zugferd-factur-x) [![License](https://poser.pugx.org/silarhi/zugferd-factur-x/license.png)](https://packagist.org/packages/silarhi/zugferd-factur-x)
 
