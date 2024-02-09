@@ -1,4 +1,5 @@
 *.php text eol=lf
+/schema/*/Schematron    export-ignore
 /tests/                 export-ignore
 /phpunit.xml            export-ignore
 /phpstan.dist.neon      export-ignore
